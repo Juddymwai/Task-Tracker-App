@@ -1,19 +1,34 @@
 class TasksController < ApplicationController
 
 
-    def show 
-        task = Task.find_by(id: session[:user_id])
+    # def show 
+    #     task = Task.find_by(id: session[:user_id])
         
-        if task
-            render json: task
-        else
-            render json: { error: "Not authorized" }, status: :unauthorized
-        end
+    #     if task
+    #         render json: task
+    #     else
+    #         render json: { error: "Not authorized" }, status: :unauthorized
+    #     end
 
+    # end
+
+    def index 
+        task= Task.all 
+        render json: task
+    end 
+
+    def create 
+        task = Task.create (Task_params)
+        if task
+            session[:user_id] = user.id 
+            render json: task, status: :created 
+        else
+            render json: {error: task.errors.full_messages}, status: :unprocessable_entity
+        end
     end
 
     def update
-        task = find_task
+        task = Task.find(params[:task_id])
         task.update(task_params)
     
         if task
@@ -27,7 +42,7 @@ class TasksController < ApplicationController
 
     def destroy 
 
-        task = Task.find_by(id: session[:user_id]) 
+        task = Task.find(params[:task_id]) 
         if task
             task.destroy(task_params)
             head :no_content
@@ -43,8 +58,8 @@ class TasksController < ApplicationController
         params.require(:task).permit(:title, :duration, :user_id)
 
     end
-    def find_task  
-        task = Task.find(params[:id])
+    # def find_task  
+    #     task = Task.find(params[:id])
 
-    end 
+    # end 
 end
