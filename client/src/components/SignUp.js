@@ -23,12 +23,8 @@ function SignUp(){
 
             }
         });
-    
-
 
     }
-
-
     return (
         <div>
               <form onSubmit={handleSubmit}>
@@ -72,3 +68,5 @@ function SignUp(){
         </div>
     )
 }
+
+export default SignUp;
