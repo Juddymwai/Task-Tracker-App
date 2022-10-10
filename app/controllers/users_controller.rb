@@ -9,4 +9,11 @@ class UsersController < ApplicationController
             render json: {error: user.errors.full_messages}, status: :unprocessable_entity
     end
 
+    private 
+
+    def user_params params.permit(:username, :password, :confirmPassword)
+
+        
+    end
+
 end
