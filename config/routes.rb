@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :tasks
+  resources :tasks, only:[:create, :index, :destroy, :update]
   # resources :users, only:[:create, :show]
 
   post '/signup', to: "users#create"

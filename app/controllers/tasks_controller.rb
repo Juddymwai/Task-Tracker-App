@@ -18,39 +18,40 @@ class TasksController < ApplicationController
     end 
 
     def create 
-        task = Task.create (Task_params)
-        if task
-            session[:user_id] = user.id 
+        task = Task.create (task_params)
+        # if task
+            # session[:user_id] = user.id 
             render json: task, status: :created 
-        else
-            render json: {error: task.errors.full_messages}, status: :unprocessable_entity
-        end
+        # else
+        #     render json: {error: task.errors.full_messages}, status: :unprocessable_entity
+        # end
     end
 
-    def update
-        task = Task.find(params[:task_id])
-        task.update(task_params)
+    # def update
+    #     task = Task.find(params[:task_id])
+    #     task.update(task_params)
     
-        if task
+    #     if task
           
         
-          render json: task
-        else
-          render json: task.errors, status: :unprocessable_entity
-        end
-      end
+    #       render json: task
+    #     else
+    #       render json: task.errors, status: :unprocessable_entity
+    #     end
+    #   end
 
-    def destroy 
+    # def destroy 
 
-        task = Task.find(params[:task_id]) 
-        if task
-            task.destroy(task_params)
-            head :no_content
-        else 
-            render json: {error: "task not found"}, status: :not_found
+    #     task = Task.find(params[:task_id]) 
+    #     # if task
+    #     #     task.destroy(task_params)
+    #     #     head :no_content
+    #     # else 
+    #     #     render json: {error: "task not found"}, status: :not_found
 
-        end
-    end
+    #     # end
+        
+    # end
 
     private 
 
