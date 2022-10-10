@@ -14,7 +14,7 @@ function SignUp({setUser}){
 
         }, 
 
-        body: JSON.stringify({username, password, confirmPassword}),
+        body: JSON.stringify({username, password, password_confirmation: confirmPassword}),
 
         }).then((r)=>{
             if (r.ok){ 

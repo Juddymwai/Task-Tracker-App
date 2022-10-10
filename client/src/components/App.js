@@ -2,11 +2,13 @@ import React,{ useState,useEffect} from "react";
 import Login from "./Login";
 import SignUp from "./SignUp";
 import Home from "./Home";
-import {BrowserRouter as Router, Routes,Route, Switch} from "react-router-dom"
+import {BrowserRouter as Router, Routes,Route} from "react-router-dom"
 import NavBar from "./NavBar";
 
 function App(){
+
   const [user, setUser] = useState(null);
+
   useEffect(() =>{
     fetch('/me').then((resp) =>{
       if (resp.ok){
@@ -18,15 +20,11 @@ function App(){
 
   return (
     <div>
-
-
-
-      <main>
+      <h1>hello</h1>
+      {/* <main>
         {user ? (
           <Routes>
-            <Route path="/">
-              <Home user={user}/>
-            </Route>
+            <Route path="/" element={<Home user={user}/>}></Route>
           </Routes>
           
         ) : (
@@ -46,7 +44,16 @@ function App(){
             </Routes>
           </Router>
         )}
-      </main>
+      </main> */}
+
+       <NavBar setUser={setUser} user={user}/>
+    
+      <Home setUser={setUser}/>
+      <SignUp setUser={setUser}/>
+      <Login setUser={setUser}/>
+
+
+     
 
     </div>
   )
