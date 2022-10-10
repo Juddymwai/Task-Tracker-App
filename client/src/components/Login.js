@@ -25,6 +25,30 @@ function Login(){
 
     return (
         <div>
+            
+            <form onSubmit={handleSubmit}>
+                <h1>Login</h1>
+                <input
+                    type="text"
+                    value={username}
+                    id= "username"
+                    autoComplete="off"
+                    onChange= {(e) => setUsername(e.target.value)}
+                    placeholder="Username"
+                />
+                <br/>
+                <input
+                    type="password"
+                    value={password}
+                    id= "password"
+                    autoComplete="off"
+                    onChange= {(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+
+                />
+                <br/>
+                <button>Login</button>
+            </form>
 
         </div>
     )
