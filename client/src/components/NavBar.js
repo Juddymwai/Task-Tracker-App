@@ -14,7 +14,7 @@ function NavBar({user, setUser}){
 
     return(
         <div>
-       {/* <Link to="/">Home</Link>
+       <Link to="/">Home</Link>
         <div>
             {user ? (
                 <button onClick={handleLogout}>Logout</button>
@@ -26,7 +26,7 @@ function NavBar({user, setUser}){
                 </>
             
             )}
-        </div> */}
+        </div>
         </div>
     );
 }

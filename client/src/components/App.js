@@ -20,37 +20,35 @@ function App(){
 
   return (
     <div>
-      <h1>hello</h1>
-      {/* <main>
+     
+      <main>
+
         {user ? (
+          
+          <Router>
+
+              <NavBar user={user} setUser={setUser} />
+
           <Routes>
-            <Route path="/" element={<Home user={user}/>}></Route>
+            <Route path="/" element={<Home user={user}/>}/>
           </Routes>
+          </Router>
           
         ) : (
           
           <Router>
             <NavBar user={user} setUser={setUser} />
+
             <Routes>
-            <Route path="/signup" element={<SignUp setUser={setUser} />}>
-              
-            </Route>
-            <Route path="/login" element={<Login setUser={setUser} />}>
-              
-            </Route>
-            <Route path="/" element={<Home />}>
-              
-            </Route>
+              <Route path="/signup" element={<SignUp setUser={setUser} />}/>
+              <Route path="/login" element={<Login setUser={setUser} />}/>
+              <Route path="/" element={<Home/>}></Route>
             </Routes>
+
           </Router>
         )}
-      </main> */}
+      </main>
 
-       <NavBar setUser={setUser} user={user}/>
-    
-      <Home setUser={setUser}/>
-      <SignUp setUser={setUser}/>
-      <Login setUser={setUser}/>
 
 
      
