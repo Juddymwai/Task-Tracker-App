@@ -25,7 +25,7 @@ function Login(){
 
     return (
         <div>
-            
+
             <form onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 <input
@@ -53,3 +53,4 @@ function Login(){
         </div>
     )
 }
+export default Login;
