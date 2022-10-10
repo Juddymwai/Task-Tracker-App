@@ -1,4 +1,9 @@
 import React,{ useState,useEffect} from "react";
+import Login from "./Login";
+import SignUp from "./SignUp";
+import Home from "./Home";
+import {BrowserRouter as Router, Routes,Route, Switch} from "react-router-dom"
+import NavBar from "./NavBar";
 
 function App(){
   const [user, setUser] = useState(null);
