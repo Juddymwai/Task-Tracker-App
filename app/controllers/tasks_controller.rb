@@ -1,5 +1,9 @@
 class TasksController < ApplicationController
 
+    before_action :authorize
+    before_action :authorize_admin
+    skip_before_action :authorize_admin, only:[:index]
+
 
     # def show 
     #     task = Task.find_by(id: session[:user_id])
@@ -18,13 +22,12 @@ class TasksController < ApplicationController
     end 
 
     def create 
-        task = Task.create (task_params)
-        # if task
-            # session[:user_id] = user.id 
-            render json: task, status: :created 
-        # else
-        #     render json: {error: task.errors.full_messages}, status: :unprocessable_entity
-        # end
+        user = User.find(session[:user_id])
+        render json: {error: "not authorised"} unless user
+
+        task = user.task.create(task_params)
+        render json: task
+      
     end
 
     # def update
