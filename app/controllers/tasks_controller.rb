@@ -23,11 +23,25 @@ class TasksController < ApplicationController
 
     def create 
         user = User.find(session[:user_id])
+        # user = User.find_by(isadmin: session[:isadmin])
         render json: {error: "not authorised"} unless user
 
-        task = user.task.create(task_params)
+        task = user.tasks.create(task_params)
         render json: task
-      
+    end
+
+   
+
+
+    def update 
+        user = User.find(session[:user_id])
+        render json: {error: "not authorised"} unless user
+        task = Task.find(params[:task_id])
+
+
+        task = user.task.update(task_params)
+        render json: task
+
     end
 
     # def update
@@ -59,7 +73,7 @@ class TasksController < ApplicationController
     private 
 
     def task_params 
-        params.require(:task).permit(:title, :duration, :user_id)
+        params.permit(:title, :duration, :user_id)
 
     end
     # def find_task  
