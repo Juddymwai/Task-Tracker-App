@@ -11,7 +11,7 @@ class ApplicationController < ActionController::API
     end
 
     def authorize_admin 
-        render json: {errors: ["not authorised to perform this action"]} unless session[:isadmin] == "admin"
+        # render json: {errors: ["not authorised to perform this action"]} unless session[:isadmin] == "admin"
         # puts session[:isadmin]
     end
 end

@@ -37,7 +37,7 @@ function App(){
         ) : (
           
           <Router>
-            <NavBar user={user} setUser={setUser} />
+            <NavBar id={user} user={user} setUser={setUser} />
 
             <Routes>
               <Route path="/signup" element={<SignUp setUser={setUser} />}/>
