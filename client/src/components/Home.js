@@ -15,7 +15,6 @@ function Home({user, id}){
         .then((r)=> r.json())
         .then((data)=> setTask(data))
         }, [])
-        console.log(task.tasks)
 
     const handleOpen = () => {
         setOpen(true)
@@ -40,7 +39,10 @@ function Home({user, id}){
     
       }
     
-
+      const handleDel = () => {
+        console.log("test")
+        setOpen(true)
+    }
   
 
     if (user){
@@ -59,17 +61,20 @@ function Home({user, id}){
                     return (
                         <div>
                             
-                        <ul>
+                        <ul onMouseOver={handleDel}>
                             {/* <li>Username: {task.username}</li> */}
                             <li>Title: {one.title}</li>
-                            <li>Duration: {one.duration}</li>
+                            <p>Duration: {one.duration}</p>
                             
-                            
+                            {open ? (<DeleteTask open={open} onDeletePost={handleDeletePost} id={one.id}/>):(null)}
+
                         </ul>
-                        <DeleteTask onDeletePost={handleDeletePost} id={task.id}/>
-                        
+                    
+                
+
                         </div>
                     )
+
                 })}
                 {/* {task.map((tasks) => {
                     return (

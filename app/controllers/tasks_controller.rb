@@ -6,7 +6,8 @@ class TasksController < ApplicationController
 
 
     def show 
-        task = Task.find_by(id: session[:user_id])
+        # task = Task.find_by(id: session[:user_id])
+        task = Task.find(params[:id])
         
         if task
             render json: task
@@ -36,32 +37,21 @@ class TasksController < ApplicationController
     def update 
         user = User.find(session[:user_id])
         render json: {error: "not authorised"} unless user
-        task = Task.find(params[:task_id])
+        task = Task.find(params[:id])
 
 
-        task = user.task.update(task_params)
+        task.update(task_params)
         render json: task
 
     end
 
-    # def update
-    #     task = Task.find(params[:task_id])
-    #     task.update(task_params)
-    
-    #     if task
-          
-        
-    #       render json: task
-    #     else
-    #       render json: task.errors, status: :unprocessable_entity
-    #     end
-    #   end
+   
 
     def destroy 
 
         task = Task.find_by(id: params[:id]) 
         if task
-            task.destroy(task_params)
+            task.destroy
             head :no_content
         else 
             render json: {error: "task not found"}, status: :not_found
