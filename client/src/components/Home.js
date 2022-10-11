@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react"
 // import CreateTask from "./CreateTask";
 import NewTask from "./NewTask";
+import DeleteTask from "./DeleteTask";
 
 function Home({user, id}){
 
@@ -24,13 +25,23 @@ function Home({user, id}){
         setOpen(false)
     }
 
-    function handleAddPost(newData){
+    // adding new post
 
+    function handleAddPost(newData){
 
         setNewTask1([...newTask1, newData])
         
     }
 
+    // Delete
+    function handleDeletePost(id){
+        const updatedTask = task.filter((p) => p.id !== id);
+        setTask(updatedTask)
+    
+      }
+    
+
+  
 
     if (user){
         return (
@@ -47,12 +58,16 @@ function Home({user, id}){
                 {task.tasks.map((one) => {
                     return (
                         <div>
+                            
                         <ul>
                             {/* <li>Username: {task.username}</li> */}
                             <li>Title: {one.title}</li>
                             <li>Duration: {one.duration}</li>
                             
+                            
                         </ul>
+                        <DeleteTask onDeletePost={handleDeletePost} id={task.id}/>
+                        
                         </div>
                     )
                 })}
@@ -77,6 +92,8 @@ function Home({user, id}){
 
 
                 })} */} 
+
+
                
             </div>
         )
