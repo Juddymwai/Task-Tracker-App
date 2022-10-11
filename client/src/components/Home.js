@@ -4,6 +4,8 @@ function Home({user}){
 
     const [task, setTask]=useState([]);
 
+
+
     useEffect(()=>{
         fetch('/tasks')
      
@@ -15,6 +17,7 @@ function Home({user}){
         return (
             <div>
                 <h2> Welcome, {user.username}!</h2>;
+                <button>ADD TASK</button>
                 <h1>My Tasks</h1>
                 {task.map((tasks) => {
                     return (

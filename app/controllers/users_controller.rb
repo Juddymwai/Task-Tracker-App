@@ -6,6 +6,8 @@ class UsersController < ApplicationController
         
         if user
             render json: user
+            # tasks = Task.find(params[:id])
+            # render json: tasks
         else
             render json: { error: "Not authorized" }, status: :unauthorized
         end

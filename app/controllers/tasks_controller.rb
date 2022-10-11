@@ -2,19 +2,19 @@ class TasksController < ApplicationController
 
     before_action :authorize
     before_action :authorize_admin
-    skip_before_action :authorize_admin, only:[:index]
+    skip_before_action :authorize_admin, only:[:index, :show]
 
 
-    # def show 
-    #     task = Task.find_by(id: session[:user_id])
+    def show 
+        task = Task.find_by(id: session[:user_id])
         
-    #     if task
-    #         render json: task
-    #     else
-    #         render json: { error: "Not authorized" }, status: :unauthorized
-    #     end
+        if task
+            render json: task
+        else
+            render json: { error: "No available tasks at the moment" }, status: :unauthorized
+        end
 
-    # end
+    end
 
     def index 
         task= Task.all 
@@ -73,7 +73,7 @@ class TasksController < ApplicationController
     private 
 
     def task_params 
-        params.permit(:title, :duration, :user_id)
+        params.permit(:title, :duration, user_id)
 
     end
     # def find_task  
