@@ -1,7 +1,7 @@
 body {
   margin: 10%;
   border: 30px solid black;
-  width: 80%;
+
   
 
   background: rgb(166, 166, 153);
@@ -29,8 +29,10 @@ code {
 
 }
 .link{
-  padding-left: 50%;
+  padding-right: 50%;
   color: goldenrod;
+
+
    
 }
 .wel{
@@ -39,14 +41,14 @@ code {
   border: 10px solid black;
 }
 .btn2{
-  margin-left: 80%;
+  margin-left: 65%;
   padding: 20px;
   background-color: goldenrod;
   border-radius: 20px;
 }
 
 .form1{
-  margin-left: 80%;
+  margin-left: 60%;
   
 }
 
@@ -58,7 +60,7 @@ code {
 
 .input{
   border-radius: 10px;
-  padding: 20px;
+  padding: 15px;
   margin-top: 10px;
   border: 3px solid goldenrod;
   

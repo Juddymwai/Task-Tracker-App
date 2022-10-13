@@ -27,7 +27,7 @@ function Login({setUser}){
         <div>
 
             <form className="form" onSubmit={handleSubmit}>
-                {/* <h1>Login</h1> */}
+                <h1>Login</h1>
                 <input className="input"
                     type="text"
                     value={username}
