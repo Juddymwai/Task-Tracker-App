@@ -32,6 +32,7 @@ code {
 .wel{
   text-align: center;
   font-family:monospace;
+  border: 10px solid black;
 }
 .btn2{
   margin-left: 80%;
@@ -58,4 +59,12 @@ code {
   padding: 20px;
   width: 100px;
   height: 50px;
+}
+.card{
+  border-radius: 20px;
+  margin-bottom: 20px;
+  border: 10px solid goldenrod;
+  color: beige;
+  background: black;
+  
 }
