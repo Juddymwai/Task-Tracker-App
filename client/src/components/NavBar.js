@@ -14,7 +14,9 @@ function NavBar({user, setUser}){
 
     return(
         <div className="nav">
+      
         <Link className="link" to="/">Home</Link>
+    
         <div>
             {user ? (
                 <button className="btn1" onClick={handleLogout}>Logout</button>
@@ -24,9 +26,13 @@ function NavBar({user, setUser}){
                 <Link className="link" to="/signup">SignUp</Link>
                 <Link className="link" to='/login'>Login</Link>
                 </>
+                
             
             )}
+            
         </div>
+      
+
         </div>
     );
 }

@@ -29,8 +29,9 @@ code {
 
 }
 .link{
-  padding-right: 50%;
+  padding-right: 58%;
   color: goldenrod;
+  font-size:x-large;
 
 
    
@@ -99,5 +100,15 @@ code {
   border: 5px solid black;
   border-radius: 50px;
   margin: 20px;
+
+}
+
+.title{
+  
+  margin-top: 40px;
+  color:black;
+  text-align: center;
+  font-family:serif;
+  text-decoration:dotted;
 
 }

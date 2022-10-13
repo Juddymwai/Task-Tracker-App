@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react"
-// import CreateTask from "./CreateTask";
 import NewTask from "./NewTask";
 import DeleteTask from "./DeleteTask";
 import EditTask from "./EditTask";
@@ -49,7 +48,7 @@ function Home({user, id}){
         setTask(updatedTask)
     
       }
-
+// update
   function handleUpdate (updatedTaskObj){
     const updatedTask = task.map((item) => {
         if (item.id === updatedTaskObj.id){
@@ -61,8 +60,6 @@ function Home({user, id}){
     setTask(updatedTask)
   }
   
-
-
     if (user){
         return (
 
@@ -94,13 +91,18 @@ function Home({user, id}){
     } else {
         return (
 
-            <div className="home">
+            <div>
+                <h3 className="title">TASK TRACKER</h3>
+                <div className="home">
+
+                
                 <button className="btn4"><h3>TO GET STARTED</h3>
                 
                 </button>
                 <button className="btn5">
                     <h3>Kindly SignUP or Login</h3>
                 </button>
+                </div>
             </div>
         )
     }
