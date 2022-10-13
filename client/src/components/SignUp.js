@@ -27,12 +27,12 @@ function SignUp({setUser}){
     }
     return (
         <div>
-              <form onSubmit={handleSubmit}>
+              <form className="form" onSubmit={handleSubmit}>
 
             <h1>SignUp</h1>
 
 
-            <input
+            <input className="input"
                 type="text"
                 value={username}
                 id= "username"
@@ -42,7 +42,7 @@ function SignUp({setUser}){
             />
             <br/>
 
-            <input
+            <input className="input"
                 type="password"
                 value={password}
                 id= "password"
@@ -52,7 +52,7 @@ function SignUp({setUser}){
 
             />
             <br/>
-            <input
+            <input className="input"
                 type="password"
                 value={confirmPassword}
                 id= "confirmPassword"
@@ -62,7 +62,7 @@ function SignUp({setUser}){
                 
             />
             <br/>
-            <button>Sign Up</button>
+            <button className="btn3" >Sign Up</button>
             </form>
 
         </div>

@@ -26,9 +26,9 @@ function Login({setUser}){
     return (
         <div>
 
-            <form onSubmit={handleSubmit}>
-                <h1>Login</h1>
-                <input
+            <form className="form" onSubmit={handleSubmit}>
+                {/* <h1>Login</h1> */}
+                <input className="input"
                     type="text"
                     value={username}
                     id= "username"
@@ -37,7 +37,7 @@ function Login({setUser}){
                     placeholder="Username"
                 />
                 <br/>
-                <input
+                <input className="input"
                     type="password"
                     value={password}
                     id= "password"
@@ -47,7 +47,7 @@ function Login({setUser}){
 
                 />
                 <br/>
-                <button>Login</button>
+                <button className="btn3">Login</button>
             </form>
 
         </div>
