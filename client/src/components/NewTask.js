@@ -41,8 +41,8 @@ function NewTask({onHandleAddPost}){
         
             <div>
 
-            <form onSubmit={handleSubmit}>                <h1>For Admin only</h1>
-               <input
+            <form className="form1" onSubmit={handleSubmit}>
+               <input className="input"
                     type="text"
                     value={title}
                     // id= "username"
@@ -51,7 +51,7 @@ function NewTask({onHandleAddPost}){
                     placeholder="Project's Name"
                 />
                 <br/>
-                <input
+                <input className="input"
                     type="text"
                     value={duration}
                     // id= "password"
@@ -61,7 +61,7 @@ function NewTask({onHandleAddPost}){
 
                 />
                 <br/>
-                <input
+                {/* <input className="input"
                     type="text"
                     value={user_id}
                     // id= "password"
@@ -69,9 +69,9 @@ function NewTask({onHandleAddPost}){
                     onChange= {(e) => setUser_id(e.target.value)}
                     placeholder="Assigned To:"
 
-                />
+                /> */}
                 <br/>
-                <button>Add</button>
+                <button className="btn3" >Add</button>
             </form>
         </div>
        
