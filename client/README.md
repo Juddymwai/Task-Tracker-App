@@ -24,7 +24,6 @@ Logout
 
 
 
-
  ###  Requirements
  * Access to  a computer
  * Access to internet
