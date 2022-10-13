@@ -68,7 +68,7 @@ function Home({user, id}){
 
             <div>
                 <h2 className="wel"> Welcome, {user.username}!</h2>
-                <button onClick={handleOpen}>ADD TASK</button>
+                <button className="btn2" onClick={handleOpen}>ADD TASK</button>
 
                 {/* <NewTask onHandleAddPost={handleAddPost}/> */}
                 <div open={open} onClose={handleClose}>

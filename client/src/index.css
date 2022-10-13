@@ -1,10 +1,13 @@
 body {
-  margin: 0;
+  margin: 10%;
+  background: rgb(166, 166, 153);
+  /* background-image: url("https://www.incimages.com/uploaded_files/image/1920x1080/getty_514914078_200013332000928076_167571.jpg"); */
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  
   
 }
 
@@ -29,4 +32,10 @@ code {
 .wel{
   text-align: center;
   font-family:monospace;
+}
+.btn2{
+  margin-left: 80%;
+  padding: 30px;
+  background-color: goldenrod;
+  border-radius: 20px;
 }
