@@ -1,8 +1,8 @@
 class TasksController < ApplicationController
 
     before_action :authorize
-    before_action :authorize_admin
-    skip_before_action :authorize_admin, only:[:index, :show]
+    # before_action :authorize_admin
+    # skip_before_action :authorize_admin, only:[:index, :show]
 
 
     def show 

@@ -87,29 +87,6 @@ function Home({user, id}){
                         </div>
                     )
                 })}
-                {/* {task.map((tasks) => {
-                    return (
-                        <div key={tasks.id}>
-                            <ul>
-                                <li>{tasks.title}</li>
-                                <li>{tasks.duration}</li>
-                                {/* <li>{tasks.user}</li> */}
-
-                                {/* <li>{tasks.user.map((users) => {
-                                    <div>
-                                        {console.log (users.username)}
-
-                                    </div>
-
-                                })}</li> */}
-                            {/* </ul>
-                        </div>
-                    )
-
-
-                })} */} 
-
-
                
             </div>
         )
