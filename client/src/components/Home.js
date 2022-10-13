@@ -145,7 +145,17 @@ function Home({user, id}){
         )
 
     } else {
-        return <h2>Kindly Login or Sign Up</h2>
+        return (
+
+            <div className="home">
+                <button className="btn4"><h3>TO GET STARTED</h3>
+                
+                </button>
+                <button className="btn5">
+                    <h3>Kindly SignUP or Login</h3>
+                </button>
+            </div>
+        )
     }
 } 
 export default Home;
