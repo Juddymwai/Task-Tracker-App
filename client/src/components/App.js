@@ -5,6 +5,7 @@ import Home from "./Home";
 import {BrowserRouter as Router, Routes,Route} from "react-router-dom"
 import NavBar from "./NavBar";
 
+
 function App(){
 
   const [user, setUser] = useState(null);

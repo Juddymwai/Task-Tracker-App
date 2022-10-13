@@ -14,7 +14,7 @@ function NewTask({onHandleAddPost}){
     function handleSubmit(e){
          e.preventDefault()
        
-        e.target.reset();
+        // e.target.reset();
 
     
         const newObj = {

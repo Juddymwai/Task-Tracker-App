@@ -1,18 +1,18 @@
 import React, {useState} from "react"
 
-function EditTask({body, id, onUpdatedTask}){
+function EditTask({body, title, id, onUpdatedTask}){
 
-    const [taskBody, setTaskBody]= useState(body);
+    const [taskBody, setTaskBody]= useState(title);
 
-    function handleSubmit(e){
+    function handleSubmitForm(e){
         e.preventDefault()
      
 
-       fetch(`/users/${id}`, {
+       fetch(`/tasks/${id}`, {
            method: "PATCH",
            headers: {"Content-Type":"application/json"},
            body: JSON.stringify({
-            body: taskBody
+            title: taskBody
            })
 
        })
@@ -20,9 +20,11 @@ function EditTask({body, id, onUpdatedTask}){
        .then((updatedTask) => onUpdatedTask(updatedTask) )
 
    }
+   console.log(taskBody)
     return (
         <div>
-            <form>
+        
+            <form onSubmit={handleSubmitForm}>
                 <input
                 type="text"
                 name = "body"

@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react"
 // import CreateTask from "./CreateTask";
 import NewTask from "./NewTask";
 import DeleteTask from "./DeleteTask";
+import EditTask from "./EditTask";
 
 function Home({user, id}){
 
@@ -43,12 +44,30 @@ function Home({user, id}){
         console.log("test")
         setOpen(true)
     }
-  
+  function handleUpdate (updatedTaskObj){
+    const updatedTask = task.map(()=>{
+        if (task.id === updatedTaskObj.id){
+            console.log(task.id)
+            return updatedTaskObj ;
+
+        } else {
+
+            return task
+        }
+    })
+
+
+    setTask(updatedTask);
+    
+  }
+  console.log(task);
+
 
     if (user){
         return (
+
             <div>
-                <h2> Welcome, {user.username}!</h2>
+                <h2 className="wel"> Welcome, {user.username}!</h2>
                 <button onClick={handleOpen}>ADD TASK</button>
 
                 {/* <NewTask onHandleAddPost={handleAddPost}/> */}
@@ -59,16 +78,38 @@ function Home({user, id}){
                 <h1>My Tasks</h1>
                 {task.tasks.map((one) => {
                     return (
-                        <div>
-                            
-                        <ul onMouseOver={handleDel}>
+                        <div className="card" style={{width: 18+"rem"}}>
+
+                        
+                        <div className="card-body">
+                            <li className="card-title">Title: {one.title}</li>
+                            <p className="card-text">Duration: {one.duration}</p>
+                            <DeleteTask  open={open} onDeletePost={handleDeletePost} id={one.id}/>
+                            {/* <EditTask onUpdatedTask={handleUpdate} id={one.id} title={one.title}/> */}
+                            {/* <button className="card-link">edit</button> */}
+                        </div>
+                       
+
+                        {/* <ul onMouseOver={handleDel}>
                             {/* <li>Username: {task.username}</li> */}
-                            <li>Title: {one.title}</li>
+                            
+                            {/* <li>Title: {one.title}</li>
                             <p>Duration: {one.duration}</p>
                             
-                            {open ? (<DeleteTask open={open} onDeletePost={handleDeletePost} id={one.id}/>):(null)}
+                            {open ? (<DeleteTask open={open} onDeletePost={handleDeletePost} id={one.id}/>):(null)} */}
 
-                        </ul>
+                            {/* {isEditing ? (
+                                <EditTask onUpdatedTask={handleUpdate} id={one.id} title={one.title}/>
+
+
+
+                            ):(
+                                <li>{title}</>
+                            )
+
+
+                            } */}
+                        {/* </ul> */} 
                     
                 
 
