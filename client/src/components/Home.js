@@ -9,13 +9,15 @@ function Home({user, id}){
     const [task, setTask]=useState([]);
     const [newTask1, setNewTask1]=useState([]);
     const [open, setOpen] = useState(false)
+    const [on, setOn] = useState(false)
+
 
     useEffect(()=>{
         fetch(`/users/${id}`)
      
         .then((r)=> r.json())
         .then((data)=> setTask(data))
-        }, [])
+        }, [task])
 
     const handleOpen = () => {
         setOpen(true)
@@ -23,6 +25,14 @@ function Home({user, id}){
 
     const handleClose = () => {
         setOpen(false)
+    }
+
+    const handleOn = () => {
+        setOn(true)
+    }
+
+    const handleOff = () => {
+        setOn(false)
     }
 
     // adding new post
@@ -39,83 +49,43 @@ function Home({user, id}){
         setTask(updatedTask)
     
       }
-    
-      const handleDel = () => {
-        console.log("test")
-        setOpen(true)
-    }
+
   function handleUpdate (updatedTaskObj){
-    const updatedTask = task.map(()=>{
-        if (task.id === updatedTaskObj.id){
-            console.log(task.id)
-            return updatedTaskObj ;
-
+    const updatedTask = task.map((item) => {
+        if (item.id === updatedTaskObj.id){
+            return updatedTaskObj
         } else {
-
-            return task
+            return item
         }
     })
-
-
-    setTask(updatedTask);
-    
+    setTask(updatedTask)
   }
-  console.log(task);
+  
 
 
     if (user){
         return (
 
             <div>
+
                 <h2 className="wel"> Welcome, {user.username}!</h2>
                 <button className="btn2" onClick={handleOpen}>ADD TASK</button>
 
-                {/* <NewTask onHandleAddPost={handleAddPost}/> */}
-                <div open={open} onClose={handleClose}>
-                    {/* <CreateTask handleClose={handleClose}/> */}
-                </div>
-                {open ? (<NewTask onHandleAddPost={handleAddPost}/>) : (null)}
+             
+                {open ? (<NewTask onHandleAddPost={handleAddPost} handleClose={handleClose}/>) : (null)}
                 <h1>My Tasks</h1>
                 {task.tasks.map((one) => {
                     return (
                         <div className="card" style={{width: 18+"rem"}}>
-
-                        
-                        <div className="card-body">
-                            <li className="card-title">Title: {one.title}</li>
-                            <p className="card-text">Duration: {one.duration}</p>
-                            <DeleteTask  open={open} onDeletePost={handleDeletePost} id={one.id}/>
-                            {/* <EditTask onUpdatedTask={handleUpdate} id={one.id} title={one.title}/> */}
-                            {/* <button className="card-link">edit</button> */}
-                        </div>
-                       
-
-                        {/* <ul onMouseOver={handleDel}>
-                            {/* <li>Username: {task.username}</li> */}
-                            
-                            {/* <li>Title: {one.title}</li>
-                            <p>Duration: {one.duration}</p>
-                            
-                            {open ? (<DeleteTask open={open} onDeletePost={handleDeletePost} id={one.id}/>):(null)} */}
-
-                            {/* {isEditing ? (
-                                <EditTask onUpdatedTask={handleUpdate} id={one.id} title={one.title}/>
-
-
-
-                            ):(
-                                <li>{title}</>
-                            )
-
-
-                            } */}
-                        {/* </ul> */} 
-                    
-                
-
+                            <div className="card-body">
+                                <li className="card-title">Title: {one.title}</li>
+                                <p className="card-text">Duration: {one.duration}</p>
+                                <DeleteTask onDeletePost={handleDeletePost} id={one.id}/>
+                                <button onClick={handleOn}>Edit Task</button>
+                                {on ? (<EditTask onUpdatedTask={handleUpdate} id={one.id} handleOff={handleOff}/>):(null)}
+                           </div>
                         </div>
                     )
-
                 })}
                 {/* {task.map((tasks) => {
                     return (

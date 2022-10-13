@@ -2,7 +2,7 @@ import React, {useState} from "react";
 // import {useHistory} from "react-router-dom"
 
 
-function NewTask({onHandleAddPost}){
+function NewTask({onHandleAddPost, handleClose}){
  
    
 
@@ -32,7 +32,7 @@ function NewTask({onHandleAddPost}){
         .then((newBlog) => onHandleAddPost(newBlog) )
 
        
-        
+    handleClose()
 
     }
     

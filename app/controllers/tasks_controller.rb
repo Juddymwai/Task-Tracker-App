@@ -28,10 +28,14 @@ class TasksController < ApplicationController
         render json: {error: "not authorised"} unless user
 
         task = user.tasks.create(task_params)
+        if task.valid?
         render json: task
+        else  
+            render json: {error: task.errors}, status: :unprocessable_entity
+        end
     end
 
-   
+
 
 
     def update 
