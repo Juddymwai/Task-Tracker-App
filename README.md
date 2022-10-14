@@ -1,8 +1,8 @@
 # TASK TRACKER
  ## Judy Mwai
 ## Screenshot
- <!-- ![image](./public/taskApp.png) -->
- <img src="/client/public/taskApp.png" />
+ <!-- ![image](./client/public/landing.png) -->
+ <img src="/client/public/landing.png" />
  
  ## Table of Content
  - [Description](#description)
