@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
-  resources :tasks, only:[:create, :index, :destroy, :update, :show]
-  resources :users, only:[:create, :show]
+  # namespace :api do
 
-  post '/signup', to: "users#create"
-  post '/login', to: "sessions#create"
-  get '/me', to: "users#show"
-  delete '/logout', to: "sessions#destroy"
+    resources :tasks, only:[:create, :index, :destroy, :update, :show]
+    resources :users, only:[:create, :show]
+
+    post '/signup', to: "users#create"
+    post '/login', to: "sessions#create"
+    get '/me', to: "users#show"
+    delete '/logout', to: "sessions#destroy"
+  
+
+  # get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
 
 end
