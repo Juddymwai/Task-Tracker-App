@@ -70,7 +70,7 @@ function Home({user, id}){
 
              
                 {open ? (<NewTask onHandleAddPost={handleAddPost} handleClose={handleClose}/>) : (null)}
-                <h1>My Tasks</h1>
+                <h1 className="task">My Tasks</h1>
                 {task.tasks.map((one) => {
                     return (
                         <div className="card" style={{width: 18+"rem"}}>
