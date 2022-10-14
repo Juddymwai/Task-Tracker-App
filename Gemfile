@@ -64,3 +64,7 @@ group :test do
   gem "webdrivers"
 end
 gem "active_model_serializers", "~> 0.10.12"
+
+group :production do
+  gem 'pg', '~> 1.4', '>= 1.4.3'
+end
