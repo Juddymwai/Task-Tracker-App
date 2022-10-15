@@ -37,7 +37,7 @@ Logout
  ****
  
 ### Live Link
-- Click this link to view the live application https://client-side-task-app.vercel.app/
+- Click this link to view the live application https://jay-task-tracker.herokuapp.com/
 ### Technology  Used
 *RAILS - to build backend 
 *REACT 	- to create the single page application 
