@@ -1,7 +1,7 @@
 # TASK TRACKER
  ## Judy Mwai
 ## Screenshot
- ![image](./client/public/)
+ <!-- ![image](./client/public/home1.png) -->
  <img src="/client/public/landing.png" />
  <img src="/client/public/home1.png" />
 
